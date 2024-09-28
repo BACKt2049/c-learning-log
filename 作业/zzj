@@ -1,0 +1,47 @@
+#include<iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	string a;
+	cin >> a;
+	string b = a;
+	int j = 0; int w = 0;
+	for (int i = 0; i < a.length(); i++)
+	{
+		if (a[i] < a[i + 1])
+		{
+			char c = a[i];
+			a[i] = a[i + 1];
+			a[i + 1] = c;
+			j++;
+			break;
+		}
+	}
+	for (int q = 0; q < a.length(); q++)
+	{
+		if (a[q] = a[q + 1])
+		{
+			char c = a[q];
+			a[q] = a[q + 1];
+			a[q + 1] = c;
+			w++;
+			break;
+		}
+	}
+	if ((j == 0)&&( w == 0))
+	{
+		char c = b[a.length() - 2];
+		b[a.length() - 2] = a[a.length() - 1];
+		b[a.length() - 1] = c;
+		cout << stoi(b) << endl;
+	}
+	if (j != 0) { cout << stoi(a) << endl; }
+	if ((j == 0) && (w != 0))
+	{
+		cout << stoi(a) << endl;
+	}
+	return 0;
+}
