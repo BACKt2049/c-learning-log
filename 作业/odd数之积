@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,line; int num;
+	cin >> line;
+		for (int i = 0; i < line; i++)
+		{
+			cin >> n;
+			long long temp = 1;
+			for (int i = 0; i < n; i++)
+			{
+				cin >> num;
+				if (num % 2 == 1) { temp *= num; }
+			}
+			cout << temp << endl;
+		}
+	return 0;
+}
