@@ -1,0 +1,23 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	int a, b ,c,cauculation = 0;
+	while (1)
+	{
+
+		cin >> a >> b >> c;
+		if (c != 0)
+		{
+			for (int i = a; i <= b; i++)
+			{
+				if (c % i == 0) { cauculation++; }
+			}
+			cout << cauculation << endl;
+			cauculation = 0;
+		}
+		if ((a == 0) || (b == 0)) { break; }
+	}
+	return 0;
+}
