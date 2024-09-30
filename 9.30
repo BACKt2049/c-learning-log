@@ -1,0 +1,56 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{	
+	struct Student
+	{
+		string name;
+		int age;
+		int score;
+
+	}s3;
+	Student s1;
+	s1.name = "zhang_san";
+	s1.age = 100;
+	s1.score = 18;
+	cout << s1.age;
+	s3.age = 100;
+	cout << s3.age;
+
+
+	Student arr[3]
+	{
+	{"wang",18,100},
+	{"li",64,55},
+	{"wiw",65,99}
+	};
+	arr[0].age = 7555;
+	Student* p = &s3;
+	cout << p->age;
+	
+
+
+
+	//嵌套结构体
+	struct student
+	{
+		int name;
+	};
+	struct teacher
+	{
+		int age;
+		student stu;
+	};
+	teacher o;
+	teacher* k = &o;
+	k->stu.name;
+
+
+	//struct zuowei function
+
+
+
+	
+	return 0;
+}
