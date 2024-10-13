@@ -1,0 +1,33 @@
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	//定义数组+计算和
+	int n; 
+	int a[1000];
+	cin >> n;
+while(n != 0)
+{
+	double temp = 0;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a[i];
+		temp += (double)a[i];
+	}
+
+	//计算平方差
+	double variance = 0;
+	for (int i = 0; i < n; i++)
+	{
+		variance += pow((a[i] - temp / n), 2.0) / n;
+	}
+	//输出标准差
+	cout << fixed << setprecision(6) << pow(variance, 0.5);
+	variance = 0;
+}
+
+
+	return 0;
+}
