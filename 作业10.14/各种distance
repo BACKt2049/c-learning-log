@@ -1,0 +1,49 @@
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	//数列长度
+	int n; cin >> n;
+	//x,y数列
+	double x[1001]; double y[1001];
+	for (int i = 0; i < n; i++)
+	{
+		cin >> x[i];
+	}
+	for (int i = 0; i < n; i++)
+	{
+		cin >> y[i];
+	}
+	//曼哈顿距离
+	double temp = 0;
+	for (int i = 0; i < n; i++)
+	{
+		temp += abs(x[i] - y[i]);
+	}
+	cout << fixed << setprecision(6) << temp << endl;
+	//欧几里得距离
+	double temp1 = 0;
+	for (int i = 0; i < n; i++)
+	{
+		temp1 += pow(abs(x[i] - y[i]), 2.0);
+	}
+	cout << fixed << setprecision(6) << pow(temp1, 0.5) << endl;
+	//三次方距离
+	double temp2 = 0;
+	for (int i = 0; i < n; i++)
+	{
+		temp2 += pow(abs(x[i] - y[i]), 3.0);
+	}
+	cout << fixed << setprecision(6) << pow(temp2, 1.0/3) << endl;
+	//无穷次方距离
+	double temp3 = abs(x[0] - y[0]);
+	for (int i = 0; i < n - 1; i++)
+	{
+		if (temp3 < (abs(x[i + 1] - y[i + 1]))) { temp3 = abs(x[i + 1] - y[i + 1]); }
+	}
+	cout << fixed<<setprecision(6)<<temp3;
+
+	return 0;
+}
