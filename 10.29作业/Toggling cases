@@ -1,0 +1,20 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	int count[26] = {0};
+	string sentence;
+	getline(cin, sentence);
+	for (int k = 0; k < sentence.size();k++)
+	{
+		char i = sentence[k];
+		int temp = (int)i;
+		if(temp < 123&&temp > 96)sentence[k] = (char)(i - 32);
+		if(temp >= 65&& temp <= 90)sentence[k] = (char)(i + 32);
+	}
+	cout << sentence;
+
+	return 0;
+}
