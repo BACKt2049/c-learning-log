@@ -1,0 +1,27 @@
+int main()
+{
+Mat a;
+a = imread（“路径”）；
+imwrite("")
+imshow（"chuangkou's name",img)
+waitkey(0);
+}
+VideoCapture
+videoCapture cap("视频路径");
+Mat img;
+if(!cap.isOpened())
+{
+  std::cout<<"Error"<<std::endl;
+  return -1;
+}
+double fps = cap.get(CAP_PROP_FPS);
+while(1)
+{
+  cap.read(img);//按顺序将视频的每一帧存入img
+if(!img.empty())
+{
+    imshow("chuangkou's name",img);
+    waitKey(1000/fps);
+  }
+  else{break;}
+}
